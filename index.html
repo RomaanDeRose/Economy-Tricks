@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<title>Economics Tricks!</title>
+	</head>
+	<body>
+		<i id="btn-history" class="fas fa-history"></i>
+		<i id="btn-navbar" class="fas fa-align-center"></i>
+		<!-- NAV MOBILE -->
+		<div class="navMobile">
+			<div class="links">
+				<a class="link" href="#index">Inicio</a>
+				<a class="link" href="#economy">Economía</a>
+				<a class="link" href="#calcs">Cálculos</a>
+				<a class="link" href="#history">Historia</a>
+			</div>
+		</div>
+		<!-- FIN NAVBAR MOBILE -->
+		<!-- HISTORIAL NAV -->
+		<div id="historial" class="historialNav">
+			<h3>Últimos cálculos:</h3>
+			<div id="historialOperations"></div>
+		</div>
+		<!-- FIN HISTORIAL NAV -->
+		<div id="index" class="indexContainer">
+			<div class="textContainer">
+				<p class="textContainer__presentation">Bienvenido!</p>
+				<h1 class="textContainer__textDescription">
+					Esto es <span>Economics Tricks</span>
+				</h1>
+				<p class="textContainer__textFinal">
+					Podrás realizar todas las operaciones que quieras y sacarte todas tus
+					dudas
+				</p>
+			</div>
+			<article class="imgContainer">
+				<img src="./assets/graphs.png" alt="economia" />
+			</article>
+			<a href="#economy"><i class="fas fa-arrow-down"></i></a>
+		</div>
+		<section id="economy" class="economy">
+			<h2 class="economy__title fw-bold">economía</h2>
+			<p class="economy__description">¿Qué es la economía?</p>
+			<div class="economy__textContainer">
+				<p class="economy__textContainer__definition">
+					La economía (como ciencia económica) es la ciencia social que estudia:
+				</p>
+				<ul>
+					<li>
+						La extracción, producción, intercambio, distribución y consumo de
+						bienes y servicios.
+					</li>
+					<li>
+						La forma o medios de satisfacer las necesidades humanas ilimitadas
+						mediante recursos limitados.
+					</li>
+					<li>
+						La forma en la que las personas y sociedades sobreviven, prosperan y
+						funcionan.
+					</li>
+					<li>
+						La distribución eficiente de los factores productivos en una
+						sociedad.
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section id="calcs" class="calcs">
+			<h2 class="calcs__title fw-bold">cálculos</h2>
+			<p class="calcs__text1">Realiza los cálculos que quieras!</p>
+			<!-- <p class="calcs__text2">Aprendé sus fórmulas!</p> -->
+			<h3 class="calcs__1">Pensa en el futuro!</h3>
+			<div class="calcs__1__container">
+				<form class="calcs__form" id="formMoney">
+					<h4 class="calcs__form__title">¿Dólar o Plazo Fijo?</h4>
+					<div>
+						<label for="">La tasa nominal de los Plazos Fijos es esta:</label>
+						<input type="number" name="tasa" value="36.5" min="36.5" max="36.5" id="">
+					</div>
+					<div>
+						<label for="">Cuánto crees que va a estar el dólar?</label>
+						<input type="number" name="dolar" min="150" id="">
+					</div>
+					<button type="submit">consultar</button>
+				</form>
+				<div id="resultDolarOrInflation"></div>
+				<form class="calcs__form" id="formSalary">
+					<h4 class="calcs__form__title">¿Cuánto vale mi salario?</h4>
+					<div>
+						<label for="">Cuánto es tu ingreso?</label>
+						<input type="number" name="ingreso" min="5000" id="">
+					</div>
+					<div>
+						<label for="">Cuál es el nivel de inflación actual?</label>
+						<input type="number" name="ipc" max="200" id="">
+					</div>
+					<button type="submit">calcular</button>
+				</form>
+				<div id="resultSalary"></div>
+			</div>
+		<section id="history" class="history">
+			<h2 class="history__title fw-bold">Historia</h2>
+			<p class="history__text">
+				Durante la historia, hubo dos grandes sistemas económicos
+			</p>
+			<div class="history__cardsContainer">
+				<div class="history__cardsContainer__card">
+					<p class="history__cardsContainer__card__title">
+						Economía capitalista:
+					</p>
+					<p class="history__cardsContainer__card__text">
+						También denominada economía libre o de mercado. Son economías en que
+						los individuos y las empresas llevan a cabo la producción y el
+						intercambio de bienes y servicios mediante transacciones en las que
+						intervienen precios y mercados.
+					</p>
+				</div>
+				<div class="history__cardsContainer__card">
+					<p class="history__cardsContainer__card__title">
+						Economía socialista:
+					</p>
+					<p class="history__cardsContainer__card__text">
+						Defienden el intervencionismo del Estado en la economía. En su
+						estado más puro, exigen la sustitución de la propiedad privada por
+						la colectiva en los medios de producción, cambio y distribución; del
+						mismo modo, pide la distribución igualitaria de la riqueza y la
+						eliminación de las clases sociales.
+					</p>
+				</div>
+			</div>
+			<p class="history__economist">
+				Algunos de los economistas más reconocidos
+			</p>
+			<div class="carrusel">
+				<div class="carrusel-items">
+					<div class="carrusel-item">
+						<img src="./assets/adam-smith.jpg" alt=""/>
+					</div>
+					<div class="carrusel-item">
+						<img src="./assets/marx.jpg" alt=""/>
+					</div>
+					<div class="carrusel-item">
+						<img src="./assets/hayek.jpg" alt=""/>
+					</div>
+					<div class="carrusel-item">
+						<img src="./assets/engels.jpg" alt=""/>
+					</div>
+					<div class="carrusel-item">
+						<img src="./assets/milton-friedman.jpg" alt=""/>
+					</div>
+					<div class="carrusel-item">
+						<img src="./assets/keynes.jpg" alt=""/>
+					</div>
+					<div class="carrusel-item">
+						<img src="./assets/hazlitt.jpg" alt=""/>
+					</div>
+					<div class="carrusel-item">
+						<img src="./assets/fourier.jpg" alt=""/>
+					</div>
+					<div class="carrusel-item">
+						<img src="./assets/Ludwig-von-Mises.jpg" alt=""/>
+					</div>
+					<div class="carrusel-item">
+						<img src="./assets/lange.jpg" alt=""/>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">footer</footer>
+
+		<script src="./js/main.js"></script>
+	</body>
+</html>

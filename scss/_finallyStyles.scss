@@ -1,0 +1,430 @@
+@import "./variables";
+
+i.fas.fa-history {
+	color: $blanco;
+	line-height: 50px;
+	text-align: center;
+	font-size: 2.8rem;
+	position: fixed;
+	z-index: 100;
+	top: 30px;
+	left: 25px;
+	cursor: pointer;
+}
+
+i.fas.fa-history::before {
+	content: "\f1da";
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background-color: $rojo;
+}
+
+i.fas.fa-align-center {
+	color: $blanco;
+	font-size: 2.8rem;
+	line-height: 49px;
+	text-align: center;
+	position: fixed;
+	z-index: 100;
+	top: 30px;
+	right: 25px;
+	cursor: pointer;
+}
+
+i.fas.fa-align-center::before {
+	content: "\f037";
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background-color: $rojo;
+}
+
+.historialNav {
+	width: 55%;
+	height: 100vh;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 99;
+	overflow-y: scroll;
+	background-color: $rojo;
+	padding-top: 10rem;
+	text-align: center;
+	transform: translateX(-100%);
+	transition: all 250ms ease-in;
+}
+
+.historialNav__active {
+	transform: translateX(0%);
+}
+
+.historialNav h3 {
+	color: $blanco;
+	font-size: 2.3rem;
+	font-weight: 600;
+}
+
+.historialNav .containerResult {
+	background-color: $blanco;
+	width: 90%;
+	margin: 1.5rem auto;
+	padding: 0.9rem;
+	border-radius: 15px 2px;
+}
+
+.historialNav .title {
+	color: $rojo;
+	font-size: 2rem;
+	font-weight: 800;
+}
+
+.historialNav .result {
+	color: $rojo;
+	font-size: 1.7rem;
+	font-weight: 400;
+}
+
+.navMobile {
+	width: 100%;
+	height: 100%;
+	background-color: $rojo;
+	position: fixed;
+	z-index: 99;
+	top: 0px;
+	left: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	transform: translateX(-100%);
+	transition: all 250ms ease-in;
+}
+
+.navMobile a {
+	display: block;
+	margin: 5rem;
+	padding: 1.5rem;
+	border-radius: 25px;
+	text-transform: uppercase;
+	color: $blanco;
+	text-decoration: none;
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-size: 2rem;
+}
+
+.navMobile a:hover {
+	background-color: $blanco;
+	color: $rojo;
+}
+
+.navMobile__active {
+	transform: translateX(0%);
+}
+
+.indexContainer {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: $rojo;
+}
+
+.textContainer {
+	width: 100%;
+	&__presentation {
+		font-size: 3.6rem;
+		font-weight: 900;
+	}
+	&__textDescription {
+		font-size: 2.3rem;
+		font-weight: 400;
+		margin-top: -0.8rem;
+		& span {
+			font-weight: 700;
+		}
+	}
+	&__textFinal {
+		width: 90%;
+		margin: 0 auto;
+		font-size: 1.6rem;
+		font-weight: 300;
+	}
+}
+
+.indexContainer a {
+	text-decoration: none;
+	text-transform: none;
+}
+
+i.fas.fa-arrow-down {
+	color: $rojo;
+	font-size: 5.8rem;
+	position: relative;
+	top: 90px;
+	animation: move 2s ease infinite;
+}
+
+@keyframes move {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(18px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.imgContainer {
+	display: none;
+}
+
+.economy {
+	width: 100%;
+	text-align: center;
+	&__title {
+		background-color: $rojo;
+		color: $blanco;
+		width: 200px;
+		margin: 4rem auto;
+		padding: 0.8rem 0;
+		box-shadow: 8px 9px 0px #d28579;
+		border-radius: 6px;
+		text-transform: uppercase;
+		font-size: 2.4rem;
+	}
+	&__description {
+		color: $rojo;
+		font-size: 2.1rem;
+		font-weight: 800;
+	}
+	&__textContainer {
+		width: 85%;
+		margin: 2.6rem auto;
+		background-color: $rojo;
+		color: $blanco;
+		border-radius: 10px;
+		padding: 1rem 1.4rem;
+		position: relative;
+		& ul li {
+			font-size: 1.1rem;
+			width: 75%;
+			margin: 0 auto;
+		}
+		& p {
+			font-size: 1.2rem;
+			width: 75%;
+			margin: 0.4rem auto;
+			font-weight: 500;
+		}
+	}
+}
+
+.calcs {
+	width: 100%;
+	text-align: center;
+	&__title {
+		background-color: $rojo;
+		color: $blanco;
+		width: 180px;
+		margin: 9rem auto 3rem auto;
+		padding: 0.8rem 0;
+		box-shadow: 8px 9px 0px #d28579;
+		border-radius: 6px;
+		text-transform: uppercase;
+		font-size: 2.4rem;
+	}
+	&__text1 {
+		color: $rojo;
+		font-size: 2rem;
+		font-weight: 800;
+		margin-bottom: 0.3rem;
+	}
+	&__text2 {
+		color: $rojo;
+		font-size: 1.6rem;
+		font-weight: 400;
+	}
+	&__1 {
+		color: $rojo;
+		font-size: 1.75rem;
+		font-weight: 400;
+		margin: 0.5rem;
+	}
+	&__form {
+		width: 80%;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&__title {
+			color: $rojo;
+			font-size: 2.4rem;
+			font-weight: 500;
+			margin: 2rem 0 0.2rem 0;
+		}
+		& div {
+			width: 100%;
+			margin: 0.6rem;
+		}
+		& label {
+			color: $rojo;
+			font-size: 1.3rem;
+			margin: 0.2rem 0;
+		}
+		& input {
+			width: 100%;
+			border: 2px solid $rojo;
+			font-size: 1.5rem;
+			padding: 0.8rem;
+			border-radius: 15px;
+			color: $rojo;
+			&:focus {
+				outline: none;
+			}
+		}
+		& button {
+			background-color: $rojo;
+			padding: 1.4rem;
+			margin: 1.5rem;
+			border-radius: 16px;
+			border: none;
+			text-transform: uppercase;
+			color: $blanco;
+			font-size: 1.6rem;
+			font-weight: 600;
+			&:hover {
+				box-shadow: 0px 0px 25px $rojo;
+			}
+		}
+	}
+}
+
+#resultDolarOrInflation {
+	width: 90%;
+	margin: 0.5rem auto 2rem auto;
+	color: $rojo;
+	& h3 {
+		font-size: 1.8rem;
+		font-weight: 500;
+	}
+	& p {
+		font-size: 3rem;
+		font-weight: 700;
+	}
+}
+
+#resultSalary {
+	width: 90%;
+	margin: 1.2rem auto 0rem auto;
+	color: $rojo;
+	& h3 {
+		font-size: 1.8rem;
+		font-weight: 500;
+	}
+	& p {
+		font-size: 3.5rem;
+		font-weight: 700;
+	}
+}
+
+.history {
+	width: 100%;
+	text-align: center;
+	&__title {
+		background-color: $rojo;
+		color: $blanco;
+		width: 160px;
+		margin: 7rem auto 3rem auto;
+		padding: 0.8rem 0;
+		box-shadow: 8px 9px 0px #d28579;
+		border-radius: 6px;
+		text-transform: uppercase;
+		font-size: 2.4rem;
+	}
+	&__text {
+		color: $rojo;
+		font-size: 2rem;
+		font-weight: 800;
+		width: 90%;
+		margin: 0 auto 2rem auto;
+	}
+	&__cardsContainer {
+		width: 80%;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&__card {
+			width: 100%;
+			height: auto;
+			color: $blanco;
+			text-align: initial;
+			background-color: $rojo;
+			border-radius: 10px;
+			margin-bottom: 4rem;
+			padding: 1.5rem;
+			&__title {
+				font-size: 1.7rem;
+				font-weight: 600;
+			}
+			&__text {
+				font-size: 1.4rem;
+				margin-top: 0.2rem;
+			}
+		}
+	}
+	&__economist {
+		color: $rojo;
+		font-size: 2rem;
+		font-weight: 800;
+	}
+}
+
+.carrusel {
+	margin-top: 3rem;
+}
+
+.carrusel-items {
+	display: flex;
+	gap: 4.5rem;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.carrusel-item {
+	min-width: 250px;
+	max-width: 250px;
+	height: 260px;
+}
+
+.carrusel-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border: 2px solid $rojo;
+	border-radius: 2px 15px;
+}
+
+.footer {
+	width: 100%;
+	height: 200px;
+	background-color: $rojo;
+	margin-top: 6rem;
+	// estilos solo por el texto
+	text-align: center;
+	line-height: 200px;
+	color: $blanco;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	// fin estilos texto
+}
