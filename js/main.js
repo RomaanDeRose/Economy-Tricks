@@ -54,7 +54,41 @@ const allOperations = [];
 const formMoney = document.getElementById("formMoney");
 const finallyResult = document.getElementById("resultDolarOrInflation");
 
-formMoney.addEventListener("submit", (e) => {
+// formMoney.addEventListener("submit", (e) => {
+// 	e.preventDefault();
+// 	const formDataOne = new FormData(e.target);
+// 	const dolarActual = 200;
+// 	const formula =
+// 		((formDataOne.get("dolar") - dolarActual) / dolarActual) * 100;
+// 	let result;
+// 	if (formula > formDataOne.get("tasa")) {
+// 		result = "Dólar";
+// 		finallyResult.innerHTML = `
+// 		<h3>Te conviene invertir en:</h3>
+// 		<p>${result}</p>
+// 		`;
+// 	} else if (formula == formDataOne.get("tasa")) {
+// 		result = "Cualquiera de los dos";
+// 		finallyResult.innerHTML = `
+// 		<h3>Te conviene invertir en:</h3>
+// 		<p>${result}! El retorno será el mismo</p>
+// 		`;
+// 	} else {
+// 		result = "Plazo Fijo";
+// 		finallyResult.innerHTML = `
+// 		<h3>Te conviene invertir en:</h3>
+// 		<p>${result}</p>
+// 		`;
+// 	}
+// 	const operationDolOrPF = new Operations("Dolar o PLazo Fijo", result);
+// 	allOperations.push(operationDolOrPF);
+// 	operationDolOrPF.save("operations", JSON.stringify(allOperations));
+// 	operationDolOrPF.saveHistorial();
+// 	formMoney.reset();
+// });
+
+// submit con JQUERY
+$("#formMoney").submit(function (e) {
 	e.preventDefault();
 	const formDataOne = new FormData(e.target);
 	const dolarActual = 200;
@@ -63,50 +97,63 @@ formMoney.addEventListener("submit", (e) => {
 	let result;
 	if (formula > formDataOne.get("tasa")) {
 		result = "Dólar";
-		finallyResult.innerHTML = `
-		<h3>Te conviene invertir en:</h3>
-		<p>${result}</p>
-		`;
+		$("#resultDolarOrInflation").append("<h3>Te conviene invertir en:</h3>");
+		$("#resultDolarOrInflation").append("<p>Dólar</p>");
 	} else if (formula == formDataOne.get("tasa")) {
 		result = "Cualquiera de los dos";
-		finallyResult.innerHTML = `
-		<h3>Te conviene invertir en:</h3>
-		<p>${result}! El retorno será el mismo</p>
-		`;
+		$("#resultDolarOrInflation").append("<h3>Te conviene invertir en:</h3>");
+		$("#resultDolarOrInflation").append(
+			"<p>Cualquiera de los dos! El retorno será el mismo</p>"
+		);
 	} else {
 		result = "Plazo Fijo";
-		finallyResult.innerHTML = `
-		<h3>Te conviene invertir en:</h3>
-		<p>${result}</p>
-		`;
+		$("#resultDolarOrInflation").append("<h3>Te conviene invertir en:</h3>");
+		$("#resultDolarOrInflation").append("<p>Plazo Fijo</p>");
 	}
 	const operationDolOrPF = new Operations("Dolar o PLazo Fijo", result);
 	allOperations.push(operationDolOrPF);
 	operationDolOrPF.save("operations", JSON.stringify(allOperations));
 	operationDolOrPF.saveHistorial();
-	formMoney.reset();
+	e.target.reset();
 });
 
 const formSalary = document.getElementById("formSalary");
 const resultSalary = document.getElementById("resultSalary");
 
 // EVENTO SUBMIT AL SEGUNDO FORMULARIO DE LA SECCION cálculos
-formSalary.addEventListener("submit", (e) => {
+// formSalary.addEventListener("submit", (e) => {
+// 	e.preventDefault();
+// 	const formDataTwo = new FormData(e.target);
+// 	const salaryResult = (
+// 		formDataTwo.get("ingreso") -
+// 		(formDataTwo.get("ipc") * formDataTwo.get("ingreso")) / 100
+// 	).toFixed(2);
+// 	resultSalary.innerHTML = `
+// 	<h3>Tu Poder Adquisitivo es de:</h3>
+// 	<p>$${salaryResult}</p>
+// 	`;
+// 	const operationSalary = new Operations("Salario Real", salaryResult);
+// 	allOperations.push(operationSalary);
+// 	operationSalary.save("operations", JSON.stringify(allOperations));
+// 	operationSalary.saveHistorial();
+// 	formSalary.reset();
+// });
+
+// otro submit con JQUERY
+$("#formSalary").submit(function (e) {
 	e.preventDefault();
 	const formDataTwo = new FormData(e.target);
 	const salaryResult = (
 		formDataTwo.get("ingreso") -
 		(formDataTwo.get("ipc") * formDataTwo.get("ingreso")) / 100
 	).toFixed(2);
-	resultSalary.innerHTML = `
-	<h3>Tu Poder Adquisitivo es de:</h3>
-	<p>$${salaryResult}</p>
-	`;
+	$("#resultSalary").append("<h3>Te conviene invertir en:</h3>");
+	$("#resultSalary").append(salaryResult);
 	const operationSalary = new Operations("Salario Real", salaryResult);
 	allOperations.push(operationSalary);
 	operationSalary.save("operations", JSON.stringify(allOperations));
 	operationSalary.saveHistorial();
-	formSalary.reset();
+	e.target.reset();
 });
 
 // CARRUSEL DE ECONOMISTAS
