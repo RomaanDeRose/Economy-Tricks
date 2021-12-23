@@ -139,6 +139,31 @@ const resultSalary = document.getElementById("resultSalary");
 // 	formSalary.reset();
 // });
 
+// ANIMACIONES ANIDADAS
+function animateButton() {
+	$("#animateButton").animate(
+		{
+			width: "160px",
+		},
+		600,
+		function () {
+			$("#animateButton").animate(
+				{
+					height: "70px",
+				},
+				1200
+			);
+		}
+	);
+}
+
+const animatedButton = document.getElementById("button");
+animatedButton.addEventListener("click", (e) => {
+	e.preventDefault();
+	animateButton();
+});
+// FIN ANIMACIONES ANIDADAS
+
 // otro submit con JQUERY
 $("#formSalary").submit(function (e) {
 	e.preventDefault();
@@ -147,8 +172,8 @@ $("#formSalary").submit(function (e) {
 		formDataTwo.get("ingreso") -
 		(formDataTwo.get("ipc") * formDataTwo.get("ingreso")) / 100
 	).toFixed(2);
-	$("#resultSalary").append("<h3>Te conviene invertir en:</h3>");
-	$("#resultSalary").append(salaryResult);
+	$("#resultSalary").append("<h3>Tu Poder Adquisitivo es:</h3>");
+	$("#resultSalary").append(`<p>$${salaryResult}</p>`);
 	const operationSalary = new Operations("Salario Real", salaryResult);
 	allOperations.push(operationSalary);
 	operationSalary.save("operations", JSON.stringify(allOperations));
@@ -158,16 +183,16 @@ $("#formSalary").submit(function (e) {
 
 // CARRUSEL DE ECONOMISTAS
 const carrusel = document.querySelector(".carrusel-items");
-let speedCarrusel = 16;
+let speedCarrusel = 5;
 const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
 
 const startCarrusel = () => {
 	setInterval(() => {
 		carrusel.scrollLeft = carrusel.scrollLeft + speedCarrusel;
 		if (carrusel.scrollLeft === maxScrollLeft) {
-			speedCarrusel = -16;
+			speedCarrusel = -5;
 		} else if (carrusel.scrollLeft === 0) {
-			speedCarrusel = 16;
+			speedCarrusel = 5;
 		}
 	}, 10);
 };
