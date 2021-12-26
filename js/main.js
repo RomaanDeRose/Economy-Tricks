@@ -42,6 +42,11 @@ class Operations {
 					`;
 		});
 		historialOperations.appendChild(historialContainerResult);
+		if (localStorage.getItem("darkMode") == "dark") {
+			historialContainerResult.style.backgroundColor = "#171717";
+		} else {
+			historialContainerResult.style.backgroundColor = "#fff";
+		}
 	}
 }
 
@@ -80,42 +85,12 @@ formMoney.addEventListener("submit", (e) => {
 		<p>${result}</p>
 		`;
 	}
-	const operationDolOrPF = new Operations("Dolar o PLazo Fijo", result);
+	const operationDolOrPF = new Operations("Dolar ó PLazo Fijo", result);
 	allOperations.push(operationDolOrPF);
 	operationDolOrPF.save("operations", JSON.stringify(allOperations));
 	operationDolOrPF.saveHistorial();
 	formMoney.reset();
 });
-
-// // submit con JQUERY
-// $("#formMoney").submit(function (e) {
-// 	e.preventDefault();
-// 	const formDataOne = new FormData(e.target);
-// 	const dolarActual = 200;
-// 	const formula =
-// 		((formDataOne.get("dolar") - dolarActual) / dolarActual) * 100;
-// 	let result;
-// 	if (formula > formDataOne.get("tasa")) {
-// 		result = "Dólar";
-// 		$("#resultDolarOrInflation").append("<h3>Te conviene invertir en:</h3>");
-// 		$("#resultDolarOrInflation").append("<p>Dólar</p>");
-// 	} else if (formula == formDataOne.get("tasa")) {
-// 		result = "Cualquiera de los dos";
-// 		$("#resultDolarOrInflation").append("<h3>Te conviene invertir en:</h3>");
-// 		$("#resultDolarOrInflation").append(
-// 			"<p>Cualquiera de los dos! El retorno será el mismo</p>"
-// 		);
-// 	} else {
-// 		result = "Plazo Fijo";
-// 		$("#resultDolarOrInflation").append("<h3>Te conviene invertir en:</h3>");
-// 		$("#resultDolarOrInflation").append("<p>Plazo Fijo</p>");
-// 	}
-// 	const operationDolOrPF = new Operations("Dolar o PLazo Fijo", result);
-// 	allOperations.push(operationDolOrPF);
-// 	operationDolOrPF.save("operations", JSON.stringify(allOperations));
-// 	operationDolOrPF.saveHistorial();
-// 	e.target.reset();
-// });
 
 const formSalary = document.getElementById("formSalary");
 const resultSalary = document.getElementById("resultSalary");
@@ -139,48 +114,6 @@ formSalary.addEventListener("submit", (e) => {
 	formSalary.reset();
 });
 
-// // ANIMACIONES ANIDADAS
-// function animateButton() {
-// 	$("#animateButton").animate(
-// 		{
-// 			width: "160px",
-// 		},
-// 		600,
-// 		function () {
-// 			$("#animateButton").animate(
-// 				{
-// 					height: "70px",
-// 				},
-// 				1200
-// 			);
-// 		}
-// 	);
-// }
-
-// const animatedButton = document.getElementById("button");
-// animatedButton.addEventListener("click", (e) => {
-// 	e.preventDefault();
-// 	animateButton();
-// });
-// // FIN ANIMACIONES ANIDADAS
-
-// otro submit con JQUERY
-// $("#formSalary").submit(function (e) {
-// 	e.preventDefault();
-// 	const formDataTwo = new FormData(e.target);
-// 	const salaryResult = (
-// 		formDataTwo.get("ingreso") -
-// 		(formDataTwo.get("ipc") * formDataTwo.get("ingreso")) / 100
-// 	).toFixed(2);
-// 	$("#resultSalary").append("<h3>Tu Poder Adquisitivo es:</h3>");
-// 	$("#resultSalary").append(`<p>$${salaryResult}</p>`);
-// 	const operationSalary = new Operations("Salario Real", salaryResult);
-// 	allOperations.push(operationSalary);
-// 	operationSalary.save("operations", JSON.stringify(allOperations));
-// 	operationSalary.saveHistorial();
-// 	e.target.reset();
-// });
-
 // CARRUSEL DE ECONOMISTAS
 const carrusel = document.querySelector(".carrusel-items");
 let speedCarrusel = 5;
@@ -199,3 +132,71 @@ const startCarrusel = () => {
 
 // PONGO EN MOVIMIENTO EL CARRUSEL
 startCarrusel();
+
+const changeColorCollection = (collection, color) => {
+	for (let i = 0; i < collection.length; i++) {
+		collection[i].style.color = color;
+	}
+};
+
+// FUNCION PARA CAMBIAR EL COLOR DE LOS ELEMENTOS
+const changeColorhHistorial = (color1) => {
+	for (let i = 0; i < historial.length; i++) {
+		historial.children[i].style.color = color1;
+	}
+};
+
+// MODO OSCURO O CLARO
+let darkMode;
+const titleSections = document.getElementsByTagName("h2");
+const buttons = document.getElementsByTagName("button");
+const icons = document.getElementsByTagName("i");
+const cards = document.getElementsByClassName("divs");
+
+// FUNCIONAMIENTO DEL MODO OSCURO
+if (localStorage.getItem("darkMode")) {
+	darkMode = localStorage.getItem("darkMode");
+} else {
+	darkMode = "light";
+}
+
+localStorage.setItem("darkMode", darkMode);
+
+$(() => {
+	if (localStorage.getItem("darkMode") == "dark") {
+		$("#botonDarkMode").slideUp(0);
+		$("#botonLightMode").slideDown(0);
+		$("body").addClass("dark");
+		changeColorCollection(buttons, "#171717");
+		changeColorCollection(titleSections, "#171717");
+		changeColorCollection(icons, "#171717");
+		changeColorCollection(cards, "#171717");
+		changeColorhHistorial("#171717");
+	} else {
+		$("#botonLightMode").slideUp(0);
+	}
+
+	$("#botonLightMode").click(() => {
+		$("#botonDarkMode").slideDown(0);
+		$("#botonLightMode").slideUp(0);
+		$("body").removeClass("dark");
+		changeColorCollection(buttons, "#fff");
+		changeColorCollection(titleSections, "#fff");
+		changeColorCollection(icons, "#fff");
+		changeColorCollection(cards, "#fff");
+		changeColorhHistorial("#fff");
+		localStorage.setItem("darkMode", "light");
+	});
+
+	$("#botonDarkMode").click(() => {
+		$("#botonDarkMode").slideUp(0);
+		$("#botonLightMode").slideDown(0);
+		$("body").addClass("dark");
+		changeColorCollection(buttons, "#171717");
+		changeColorCollection(titleSections, "#171717");
+		changeColorCollection(icons, "#171717");
+		changeColorCollection(cards, "#171717");
+		changeColorhHistorial("#171717");
+		localStorage.setItem("darkMode", "dark");
+	});
+});

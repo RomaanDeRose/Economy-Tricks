@@ -1,14 +1,50 @@
 @import "./variables";
 
+.buttonsFixed {
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	& #botonDarkMode {
+		position: relative;
+		top: 30px;
+		background-color: #171717;
+		color: $rojo;
+		padding: 1rem;
+		border: none;
+		border-radius: 20px;
+		font-size: 1.7rem;
+		font-weight: 900;
+		letter-spacing: 1px;
+		cursor: pointer;
+	}
+	& #botonLightMode {
+		position: relative;
+		top: 30px;
+		background-color: $blanco;
+		color: $rojo;
+		padding: 1rem;
+		border: none;
+		border-radius: 20px;
+		font-size: 1.7rem;
+		font-weight: 900;
+		letter-spacing: 1px;
+		cursor: pointer;
+	}
+}
+
 i.fas.fa-history {
 	color: $blanco;
 	line-height: 50px;
 	text-align: center;
 	font-size: 2.8rem;
-	position: fixed;
-	z-index: 100;
+	position: relative;
 	top: 30px;
-	left: 25px;
+	left: -10px;
 	cursor: pointer;
 }
 
@@ -26,10 +62,9 @@ i.fas.fa-align-center {
 	font-size: 2.8rem;
 	line-height: 49px;
 	text-align: center;
-	position: fixed;
-	z-index: 100;
+	position: relative;
 	top: 30px;
-	right: 25px;
+	right: -10px;
 	cursor: pointer;
 }
 
@@ -43,6 +78,7 @@ i.fas.fa-align-center::before {
 }
 
 .historialNav {
+	color: $blanco;
 	width: 55%;
 	height: 100vh;
 	position: fixed;
@@ -51,7 +87,7 @@ i.fas.fa-align-center::before {
 	z-index: 99;
 	overflow-y: scroll;
 	background-color: $rojo;
-	padding-top: 10rem;
+	padding-top: 7.8rem;
 	text-align: center;
 	transform: translateX(-100%);
 	transition: all 250ms ease-in;
@@ -62,7 +98,6 @@ i.fas.fa-align-center::before {
 }
 
 .historialNav h3 {
-	color: $blanco;
 	font-size: 2.3rem;
 	font-weight: 600;
 }
@@ -70,9 +105,9 @@ i.fas.fa-align-center::before {
 .historialNav .containerResult {
 	background-color: $blanco;
 	width: 90%;
-	margin: 1.5rem auto;
+	margin: 2rem auto;
 	padding: 0.9rem;
-	border-radius: 15px 2px;
+	border-radius: 20px 4px;
 }
 
 .historialNav .title {
@@ -141,11 +176,12 @@ i.fas.fa-align-center::before {
 	&__presentation {
 		font-size: 3.6rem;
 		font-weight: 900;
+		margin-bottom: 0.5rem;
 	}
 	&__textDescription {
 		font-size: 2.3rem;
 		font-weight: 400;
-		margin-top: -0.8rem;
+		margin-top: -1rem;
 		& span {
 			font-weight: 700;
 		}
@@ -155,6 +191,7 @@ i.fas.fa-align-center::before {
 		margin: 0 auto;
 		font-size: 1.6rem;
 		font-weight: 300;
+		margin-top: 0.3rem;
 	}
 }
 
@@ -163,7 +200,7 @@ i.fas.fa-align-center::before {
 	text-transform: none;
 }
 
-i.fas.fa-arrow-down {
+p.fas.fa-arrow-down {
 	color: $rojo;
 	font-size: 5.8rem;
 	position: relative;
@@ -231,6 +268,7 @@ i.fas.fa-arrow-down {
 .calcs {
 	width: 100%;
 	text-align: center;
+	color: $rojo;
 	&__title {
 		background-color: $rojo;
 		color: $blanco;
@@ -243,7 +281,6 @@ i.fas.fa-arrow-down {
 		font-size: 2.4rem;
 	}
 	&__text1 {
-		color: $rojo;
 		font-size: 2rem;
 		font-weight: 800;
 		margin-bottom: 0.3rem;
@@ -254,7 +291,6 @@ i.fas.fa-arrow-down {
 		font-weight: 400;
 	}
 	&__1 {
-		color: $rojo;
 		font-size: 1.75rem;
 		font-weight: 400;
 		margin: 0.5rem;
@@ -269,7 +305,7 @@ i.fas.fa-arrow-down {
 			color: $rojo;
 			font-size: 2.4rem;
 			font-weight: 500;
-			margin: 2rem 0 0.2rem 0;
+			margin: 2rem 0 1rem 0;
 		}
 		& div {
 			width: 100%;
@@ -277,15 +313,17 @@ i.fas.fa-arrow-down {
 		}
 		& label {
 			color: $rojo;
-			font-size: 1.3rem;
-			margin: 0.2rem 0;
+			font-size: 1.5rem;
+			margin: 0.5rem 0;
 		}
 		& input {
 			width: 100%;
-			border: 2px solid $rojo;
-			font-size: 1.5rem;
-			padding: 0.8rem;
-			border-radius: 15px;
+			border: 3px solid $rojo;
+			background-color: transparent;
+			font-size: 1.6rem;
+			padding: 1.2rem;
+			margin: 0.5rem 0;
+			border-radius: 25px;
 			color: $rojo;
 			&:focus {
 				outline: none;

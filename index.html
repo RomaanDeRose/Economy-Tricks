@@ -20,8 +20,14 @@
 		<title>Economics Tricks!</title>
 	</head>
 	<body>
-		<i id="btn-history" class="fas fa-history"></i>
-		<i id="btn-navbar" class="fas fa-align-center"></i>
+		<!-- BOTONES FIJOS -->
+		<div class="buttonsFixed">
+			<i id="btn-history" class="fas fa-history"></i>
+			<div id="botonDarkMode">DARK</div>
+			<div id="botonLightMode">CLARO</div>
+			<i id="btn-navbar" class="fas fa-align-center"></i>
+		</div>
+
 		<!-- NAV MOBILE -->
 		<div class="navMobile">
 			<div class="links">
@@ -33,8 +39,7 @@
 		</div>
 		<!-- FIN NAVBAR MOBILE -->
 		<!-- HISTORIAL NAV -->
-		<div id="historial" class="historialNav">
-			<h3>Últimos cálculos:</h3>
+		<div id="historial" class="historialNav dark-color">
 			<div id="historialOperations"></div>
 		</div>
 		<!-- FIN HISTORIAL NAV -->
@@ -52,12 +57,12 @@
 			<article class="imgContainer">
 				<img src="./assets/graphs.png" alt="economia" />
 			</article>
-			<a href="#economy"><i class="fas fa-arrow-down"></i></a>
+			<a href="#economy"><p class="fas fa-arrow-down"></p></a>
 		</div>
 		<section id="economy" class="economy">
 			<h2 class="economy__title fw-bold">economía</h2>
 			<p class="economy__description">¿Qué es la economía?</p>
-			<div class="economy__textContainer">
+			<div class="economy__textContainer divs">
 				<p class="economy__textContainer__definition">
 					La economía (como ciencia económica) es la ciencia social que estudia:
 				</p>
@@ -110,7 +115,7 @@
 						<label for="">Cuál es el nivel de inflación actual?</label>
 						<input type="number" name="ipc" max="200" id="">
 					</div>
-					<button type="submit" id="animateButton">calcular</button>
+					<button type="submit">calcular</button>
 				</form>
 				<div id="resultSalary"></div>
 			</div>
@@ -120,7 +125,7 @@
 				Durante la historia, hubo dos grandes sistemas económicos
 			</p>
 			<div class="history__cardsContainer">
-				<div class="history__cardsContainer__card">
+				<div class="history__cardsContainer__card divs">
 					<p class="history__cardsContainer__card__title">
 						Economía capitalista:
 					</p>
@@ -131,7 +136,7 @@
 						intervienen precios y mercados.
 					</p>
 				</div>
-				<div class="history__cardsContainer__card">
+				<div class="history__cardsContainer__card divs">
 					<p class="history__cardsContainer__card__title">
 						Economía socialista:
 					</p>

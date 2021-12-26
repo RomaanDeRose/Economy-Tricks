@@ -10,15 +10,55 @@ html {
   font-size: 62.5%;
 }
 
+.dark {
+  background-color: #171717;
+}
+
+.buttonsFixed {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.buttonsFixed #botonDarkMode {
+  position: relative;
+  top: 30px;
+  background-color: #171717;
+  color: #e03015;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.buttonsFixed #botonLightMode {
+  position: relative;
+  top: 30px;
+  background-color: #ffffff;
+  color: #e03015;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
 i.fas.fa-history {
   color: #ffffff;
   line-height: 50px;
   text-align: center;
   font-size: 2.8rem;
-  position: fixed;
-  z-index: 100;
+  position: relative;
   top: 30px;
-  left: 25px;
+  left: -10px;
   cursor: pointer;
 }
 
@@ -36,10 +76,9 @@ i.fas.fa-align-center {
   font-size: 2.8rem;
   line-height: 49px;
   text-align: center;
-  position: fixed;
-  z-index: 100;
+  position: relative;
   top: 30px;
-  right: 25px;
+  right: -10px;
   cursor: pointer;
 }
 
@@ -53,6 +92,7 @@ i.fas.fa-align-center::before {
 }
 
 .historialNav {
+  color: #ffffff;
   width: 55%;
   height: 100vh;
   position: fixed;
@@ -61,7 +101,7 @@ i.fas.fa-align-center::before {
   z-index: 99;
   overflow-y: scroll;
   background-color: #e03015;
-  padding-top: 10rem;
+  padding-top: 7.8rem;
   text-align: center;
   transform: translateX(-100%);
   transition: all 250ms ease-in;
@@ -72,7 +112,6 @@ i.fas.fa-align-center::before {
 }
 
 .historialNav h3 {
-  color: #ffffff;
   font-size: 2.3rem;
   font-weight: 600;
 }
@@ -80,9 +119,9 @@ i.fas.fa-align-center::before {
 .historialNav .containerResult {
   background-color: #ffffff;
   width: 90%;
-  margin: 1.5rem auto;
+  margin: 2rem auto;
   padding: 0.9rem;
-  border-radius: 15px 2px;
+  border-radius: 20px 4px;
 }
 
 .historialNav .title {
@@ -152,11 +191,12 @@ i.fas.fa-align-center::before {
 .textContainer__presentation {
   font-size: 3.6rem;
   font-weight: 900;
+  margin-bottom: 0.5rem;
 }
 .textContainer__textDescription {
   font-size: 2.3rem;
   font-weight: 400;
-  margin-top: -0.8rem;
+  margin-top: -1rem;
 }
 .textContainer__textDescription span {
   font-weight: 700;
@@ -166,6 +206,7 @@ i.fas.fa-align-center::before {
   margin: 0 auto;
   font-size: 1.6rem;
   font-weight: 300;
+  margin-top: 0.3rem;
 }
 
 .indexContainer a {
@@ -173,7 +214,7 @@ i.fas.fa-align-center::before {
   text-transform: none;
 }
 
-i.fas.fa-arrow-down {
+p.fas.fa-arrow-down {
   color: #e03015;
   font-size: 5.8rem;
   position: relative;
@@ -240,6 +281,7 @@ i.fas.fa-arrow-down {
 .calcs {
   width: 100%;
   text-align: center;
+  color: #e03015;
 }
 .calcs__title {
   background-color: #e03015;
@@ -253,7 +295,6 @@ i.fas.fa-arrow-down {
   font-size: 2.4rem;
 }
 .calcs__text1 {
-  color: #e03015;
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0.3rem;
@@ -264,7 +305,6 @@ i.fas.fa-arrow-down {
   font-weight: 400;
 }
 .calcs__1 {
-  color: #e03015;
   font-size: 1.75rem;
   font-weight: 400;
   margin: 0.5rem;
@@ -280,7 +320,7 @@ i.fas.fa-arrow-down {
   color: #e03015;
   font-size: 2.4rem;
   font-weight: 500;
-  margin: 2rem 0 0.2rem 0;
+  margin: 2rem 0 1rem 0;
 }
 .calcs__form div {
   width: 100%;
@@ -288,15 +328,17 @@ i.fas.fa-arrow-down {
 }
 .calcs__form label {
   color: #e03015;
-  font-size: 1.3rem;
-  margin: 0.2rem 0;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
 }
 .calcs__form input {
   width: 100%;
-  border: 2px solid #e03015;
-  font-size: 1.5rem;
-  padding: 0.8rem;
-  border-radius: 15px;
+  border: 3px solid #e03015;
+  background-color: transparent;
+  font-size: 1.6rem;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 25px;
   color: #e03015;
 }
 .calcs__form input:focus {
