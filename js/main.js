@@ -133,16 +133,10 @@ const startCarrusel = () => {
 // PONGO EN MOVIMIENTO EL CARRUSEL
 startCarrusel();
 
+// FUNCION PARA CAMBIAR EL COLOR DE LOS ELEMENTOS
 const changeColorCollection = (collection, color) => {
 	for (let i = 0; i < collection.length; i++) {
 		collection[i].style.color = color;
-	}
-};
-
-// FUNCION PARA CAMBIAR EL COLOR DE LOS ELEMENTOS
-const changeColorhHistorial = (color1) => {
-	for (let i = 0; i < historial.length; i++) {
-		historial.children[i].style.color = color1;
 	}
 };
 
@@ -171,7 +165,6 @@ $(() => {
 		changeColorCollection(titleSections, "#171717");
 		changeColorCollection(icons, "#171717");
 		changeColorCollection(cards, "#171717");
-		changeColorhHistorial("#171717");
 	} else {
 		$("#botonLightMode").slideUp(0);
 	}
@@ -184,7 +177,6 @@ $(() => {
 		changeColorCollection(titleSections, "#fff");
 		changeColorCollection(icons, "#fff");
 		changeColorCollection(cards, "#fff");
-		changeColorhHistorial("#fff");
 		localStorage.setItem("darkMode", "light");
 	});
 
@@ -196,7 +188,6 @@ $(() => {
 		changeColorCollection(titleSections, "#171717");
 		changeColorCollection(icons, "#171717");
 		changeColorCollection(cards, "#171717");
-		changeColorhHistorial("#171717");
 		localStorage.setItem("darkMode", "dark");
 	});
 });
