@@ -62,6 +62,9 @@ const finallyResult = document.getElementById("resultDolarOrInflation");
 formMoney.addEventListener("submit", (e) => {
 	e.preventDefault();
 	const formDataOne = new FormData(e.target);
+	// const dolar = fetch("https://criptoya.com/api/dolar");
+	// const dolarActual = dolar.then((res) => res.json()).then((data) => data.blue);
+	// console.log(dolarActual);
 	const dolarActual = 200;
 	const formula =
 		((formDataOne.get("dolar") - dolarActual) / dolarActual) * 100;
