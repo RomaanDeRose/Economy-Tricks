@@ -199,7 +199,7 @@ i.fas.fa-align-center::before {
   margin-top: -1rem;
 }
 .textContainer__textDescription span {
-  font-weight: 700;
+  font-weight: 800;
 }
 .textContainer__textFinal {
   width: 90%;
@@ -217,7 +217,7 @@ i.fas.fa-align-center::before {
 p.fas.fa-arrow-down {
   color: #e03015;
   font-size: 5.8rem;
-  position: relative;
+  position: absolute;
   top: 90px;
   animation: move 2s ease infinite;
 }
@@ -247,10 +247,12 @@ p.fas.fa-arrow-down {
   width: 200px;
   margin: 4rem auto;
   padding: 0.8rem 0;
-  box-shadow: 8px 9px 0px #d28579;
+  box-shadow: 8px 10px 0px #e67968;
   border-radius: 6px;
   text-transform: uppercase;
   font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 .economy__description {
   color: #e03015;
@@ -259,6 +261,7 @@ p.fas.fa-arrow-down {
 }
 .economy__textContainer {
   width: 85%;
+  max-width: 510px;
   margin: 2.6rem auto;
   background-color: #e03015;
   color: #ffffff;
@@ -267,15 +270,15 @@ p.fas.fa-arrow-down {
   position: relative;
 }
 .economy__textContainer ul li {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   width: 75%;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 .economy__textContainer p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   width: 75%;
   margin: 0.4rem auto;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .calcs {
@@ -287,12 +290,14 @@ p.fas.fa-arrow-down {
   background-color: #e03015;
   color: #ffffff;
   width: 180px;
-  margin: 9rem auto 3rem auto;
+  margin: 9rem auto 4rem auto;
   padding: 0.8rem 0;
-  box-shadow: 8px 9px 0px #d28579;
+  box-shadow: 8px 10px 0px #e67968;
   border-radius: 6px;
   text-transform: uppercase;
   font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 .calcs__text1 {
   font-size: 2rem;
@@ -318,27 +323,30 @@ p.fas.fa-arrow-down {
 }
 .calcs__form__title {
   color: #e03015;
-  font-size: 2.4rem;
-  font-weight: 500;
-  margin: 2rem 0 1rem 0;
+  font-size: 2.65rem;
+  font-weight: 600;
+  margin: 2rem 0 1.2rem 0;
 }
 .calcs__form div {
   width: 100%;
-  margin: 0.6rem;
+  margin: 1rem;
 }
 .calcs__form label {
+  display: block;
   color: #e03015;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin: 0.5rem 0;
 }
 .calcs__form input {
   width: 100%;
+  max-width: 665.6px;
   border: 3px solid #e03015;
   background-color: transparent;
-  font-size: 1.6rem;
-  padding: 1.2rem;
+  font-size: 2.1rem;
+  font-weight: 800;
+  padding: 1.6rem;
   margin: 0.5rem 0;
-  border-radius: 25px;
+  border-radius: 30px;
   color: #e03015;
 }
 .calcs__form input:focus {
@@ -354,9 +362,14 @@ p.fas.fa-arrow-down {
   color: #ffffff;
   font-size: 1.6rem;
   font-weight: 600;
+  cursor: pointer;
+  transition: transform 200ms ease;
 }
 .calcs__form button:hover {
   box-shadow: 0px 0px 25px #e03015;
+}
+.calcs__form button:active {
+  transform: scale(0.97);
 }
 
 #resultDolarOrInflation {
@@ -397,10 +410,12 @@ p.fas.fa-arrow-down {
   width: 160px;
   margin: 7rem auto 3rem auto;
   padding: 0.8rem 0;
-  box-shadow: 8px 9px 0px #d28579;
+  box-shadow: 8px 10px 0px #e67968;
   border-radius: 6px;
   text-transform: uppercase;
   font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 .history__text {
   color: #e03015;
@@ -476,6 +491,117 @@ p.fas.fa-arrow-down {
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+@media screen and (min-width: 600px) {
+  .economy__textContainer p {
+    width: 80%;
+    font-size: 1.8rem;
+  }
+
+  .economy__textContainer ul li {
+    font-size: 1.3rem;
+    margin: 2rem auto;
+  }
+
+  .calcs__form button {
+    font-size: 1.7rem;
+  }
+
+  .history__economist {
+    font-size: 2.1rem;
+    margin: 2rem 0;
+  }
+}
+@media screen and (min-width: 700px) {
+  .calcs__form {
+    width: 65%;
+  }
+
+  .history__text {
+    margin: 2rem auto;
+  }
+
+  .history__cardsContainer {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 850px) {
+  .buttonsFixed i.fas.fa-history {
+    left: -70px;
+  }
+
+  .buttonsFixed i.fas.fa-align-center {
+    right: -70px;
+  }
+
+  .textContainer__presentation {
+    font-size: 5rem;
+  }
+
+  .textContainer__textDescription {
+    font-size: 2.8rem;
+  }
+
+  .textContainer__textFinal {
+    font-size: 1.9rem;
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .indexContainer {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .textContainer {
+    width: 50%;
+  }
+
+  .imgContainer {
+    display: block;
+    width: 320px;
+    height: 320px;
+  }
+
+  .imgContainer img {
+    width: 100%;
+    height: 100%;
+  }
+
+  p.fas.fa-arrow-down {
+    left: calc(50% - 20px);
+    top: 450px;
+  }
+
+  .history__cardsContainer {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 3rem;
+  }
+
+  .history__cardsContainer__card {
+    width: 350px;
+    height: 190px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  p.fas.fa-arrow-down {
+    top: 500px;
+  }
+
+  .imgContainer {
+    width: 340px;
+    height: 340px;
+  }
+
+  .history__text {
+    margin: 4rem auto;
+  }
+
+  .history__economist {
+    margin: 3rem auto 5rem auto;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
