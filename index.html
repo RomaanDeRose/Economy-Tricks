@@ -22,7 +22,11 @@
 	<body>
 		<!-- BOTONES FIJOS -->
 		<div class="buttonsFixed">
-			<i id="btn-history" class="fas fa-history"></i>
+			<i id="btn-history" class="fas fa-history">
+				<div class="cantOpertaions">
+					<p>0</p>
+				</div>
+			</i>
 			<div id="botonDarkMode">DARK</div>
 			<div id="botonLightMode">CLARO</div>
 			<i id="btn-navbar" class="fas fa-align-center"></i>
@@ -92,14 +96,14 @@
 			<h3 class="calcs__1">Pensa en el futuro!</h3>
 			<div class="calcs__1__container">
 				<form class="calcs__form" id="formMoney">
-					<h4 class="calcs__form__title">¿Dólar o Plazo Fijo?</h4>
+					<h4 class="calcs__form__title">¿De acá a un año... Dólar o Plazo Fijo?</h4>
 					<div>
 						<label for="">Cuál es la tasa nominal de los Plazos Fijos?</label>
-						<input type="number" name="tasa"  id="">
+						<input type="number" name="tasa"  id="" required>
 					</div>
 					<div>
 						<label for="">Cuánto crees que va a estar el Dólar?</label>
-						<input type="number" name="dolar" min="150" id="">
+						<input type="number" name="dolar" min="170" id="" required>
 					</div>
 					<button type="submit">consultar</button>
 				</form>
@@ -108,18 +112,18 @@
 					<h4 class="calcs__form__title">¿Cuánto vale mi salario?</h4>
 					<div>
 						<label for="">Cuánto es tu ingreso?</label>
-						<input type="number" name="ingreso" min="5000" id="">
+						<input type="number" name="ingreso" min="5000" id="" required>
 					</div>
 					<div>
 						<label for="">Cuál es el nivel de inflación actual?</label>
-						<input type="number" name="ipc" max="200" id="">
+						<input type="number" name="ipc" max="500" id="" required>
 					</div>
 					<button type="submit">calcular</button>
 				</form>
 				<div id="resultSalary"></div>
 			</div>
 		<section id="history" class="history">
-			<h2 class="history__title fw-bold">Historia</h2>
+			<h2 class="history__title">Historia</h2>
 			<p class="history__text">
 				Durante la historia, hubo dos grandes sistemas económicos
 			</p>

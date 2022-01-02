@@ -22,6 +22,13 @@ btnHistorial.addEventListener("click", () => {
 	historial.classList.toggle("historialNav__active");
 });
 
+// ACA VAN A IR APARECIENDO LAS OPERACIONES EN EL HISTORIAL
+const historialOperations = document.getElementById("historialOperations");
+const cantOperations = document.querySelector(".cantOpertaions");
+const cantOperationsText = cantOperations.children[0];
+// LAS OPERACIONES HECHAS, VAN A SER GUARDADAS EN ESTE ARRAY, PARA LUEGO RECCORERLO Y MOSTRARLAS
+const allOperations = [];
+
 // CREO LA CLASE OPERACIONES
 class Operations {
 	constructor(type, result) {
@@ -35,11 +42,12 @@ class Operations {
 		const historialContainerResult = document.createElement("div");
 		historialContainerResult.classList.add("containerResult");
 		const allOperationsParse = JSON.parse(localStorage.getItem("operations"));
-		allOperationsParse.forEach((operation) => {
+		allOperationsParse.forEach((operation, index) => {
 			historialContainerResult.innerHTML = `
 					<h4 class="title">${operation.type}:</h4>
 					<p class="result">${operation.result}</p>
 					`;
+			cantOperationsText.textContent = index + 1;
 		});
 		historialOperations.appendChild(historialContainerResult);
 		if (localStorage.getItem("darkMode") == "dark") {
@@ -49,11 +57,6 @@ class Operations {
 		}
 	}
 }
-
-// ACA VAN A IR APARECIENDO LAS OPERACIONES EN EL HISTORIAL
-const historialOperations = document.getElementById("historialOperations");
-// LAS OPERACIONES HECHAS, VAN A SER GUARDADAS EN ESTE ARRAY, PARA LUEGO RECCORERLO Y MOSTRARLAS
-const allOperations = [];
 
 // EVENTO SUBMIT AL PRIMER FORMULARIO DE LA SECCION cálculos
 const formMoney = document.getElementById("formMoney");
@@ -110,7 +113,7 @@ formSalary.addEventListener("submit", (e) => {
 	<h3>Tu Poder Adquisitivo es de:</h3>
 	<p>$${salaryResult}</p>
 	`;
-	const operationSalary = new Operations("Salario Real", salaryResult);
+	const operationSalary = new Operations("Salario Real", `$${salaryResult}`);
 	allOperations.push(operationSalary);
 	operationSalary.save("operations", JSON.stringify(allOperations));
 	operationSalary.saveHistorial();
@@ -164,6 +167,7 @@ $(() => {
 		$("#botonDarkMode").slideUp(0);
 		$("#botonLightMode").slideDown(0);
 		$("body").addClass("dark");
+		cantOperations.style.backgroundColor = "#171717";
 		changeColorCollection(buttons, "#171717");
 		changeColorCollection(titleSections, "#171717");
 		changeColorCollection(icons, "#171717");
@@ -176,6 +180,7 @@ $(() => {
 		$("#botonDarkMode").slideDown(0);
 		$("#botonLightMode").slideUp(0);
 		$("body").removeClass("dark");
+		cantOperations.style.backgroundColor = "#fff";
 		changeColorCollection(buttons, "#fff");
 		changeColorCollection(titleSections, "#fff");
 		changeColorCollection(icons, "#fff");
@@ -187,6 +192,7 @@ $(() => {
 		$("#botonDarkMode").slideUp(0);
 		$("#botonLightMode").slideDown(0);
 		$("body").addClass("dark");
+		cantOperations.style.backgroundColor = "#171717";
 		changeColorCollection(buttons, "#171717");
 		changeColorCollection(titleSections, "#171717");
 		changeColorCollection(icons, "#171717");
