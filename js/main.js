@@ -122,18 +122,18 @@ formSalary.addEventListener("submit", (e) => {
 
 // CARRUSEL DE ECONOMISTAS
 const carrusel = document.querySelector(".carrusel-items");
-let speedCarrusel = 2;
+let speedCarrusel = 1;
 const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
 
 const startCarrusel = () => {
 	setInterval(() => {
 		carrusel.scrollLeft = carrusel.scrollLeft + speedCarrusel;
 		if (carrusel.scrollLeft === maxScrollLeft) {
-			speedCarrusel = 2;
+			speedCarrusel = 1;
 		} else if (carrusel.scrollLeft === 0) {
-			speedCarrusel = 2;
+			speedCarrusel = 1;
 		}
-	}, 100);
+	}, 10);
 };
 
 // PONGO EN MOVIMIENTO EL CARRUSEL
