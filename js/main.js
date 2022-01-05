@@ -133,7 +133,7 @@ const startCarrusel = () => {
 		} else if (carrusel.scrollLeft === 0) {
 			speedCarrusel = 2;
 		}
-	}, 10);
+	}, 100);
 };
 
 // PONGO EN MOVIMIENTO EL CARRUSEL
