@@ -152,6 +152,7 @@ const titleSections = document.getElementsByTagName("h2");
 const buttons = document.getElementsByTagName("button");
 const icons = document.getElementsByTagName("i");
 const cards = document.getElementsByClassName("divs");
+const footerText = document.getElementById("footerText");
 
 // FUNCIONAMIENTO DEL MODO OSCURO
 if (localStorage.getItem("darkMode")) {
@@ -167,6 +168,7 @@ $(() => {
 		$("#botonDarkMode").slideUp(0);
 		$("#botonLightMode").slideDown(0);
 		$("body").addClass("dark");
+		footerText.style.color = "#171717";
 		cantOperations.style.backgroundColor = "#171717";
 		pantalla.style.backgroundColor = "#171717";
 		botonesColor(botones, "#171717");
@@ -183,6 +185,7 @@ $(() => {
 		$("#botonDarkMode").slideDown(0);
 		$("#botonLightMode").slideUp(0);
 		$("body").removeClass("dark");
+		footerText.style.color = "#fff";
 		cantOperations.style.backgroundColor = "#fff";
 		pantalla.style.backgroundColor = "#fff";
 		botonesColor(botones, "#fff");
@@ -198,6 +201,7 @@ $(() => {
 		$("#botonDarkMode").slideUp(0);
 		$("#botonLightMode").slideDown(0);
 		$("body").addClass("dark");
+		footerText.style.color = "#171717";
 		cantOperations.style.backgroundColor = "#171717";
 		pantalla.style.backgroundColor = "#171717";
 		botonesColor(botones, "#171717");

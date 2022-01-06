@@ -568,11 +568,29 @@ p.fas.fa-arrow-down {
   background-color: #e03015;
   margin-top: 6rem;
   text-align: center;
-  line-height: 200px;
+}
+.footer__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer__container p {
   color: #ffffff;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.footer__container div {
+  margin-top: 1rem;
+}
+.footer__container div img {
+  width: 55px;
+  height: 55px;
+  border-radius: 4px;
+  margin: 0 1rem;
+  object-fit: cover;
+  transition: all 200ms ease-in;
 }
 
 @media screen and (min-width: 600px) {
@@ -594,6 +612,15 @@ p.fas.fa-arrow-down {
     font-size: 2.1rem;
     margin: 2rem 0;
   }
+
+  .footer__container p {
+    font-size: 2.1rem;
+  }
+
+  .footer__container div img {
+    width: 75px;
+    height: 75px;
+  }
 }
 @media screen and (min-width: 700px) {
   .calcs__form {
@@ -606,6 +633,10 @@ p.fas.fa-arrow-down {
 
   .history__cardsContainer {
     width: 70%;
+  }
+
+  .footer__container div img {
+    margin: 0rem 1.5rem;
   }
 }
 @media screen and (min-width: 850px) {
@@ -665,6 +696,15 @@ p.fas.fa-arrow-down {
   .history__cardsContainer__card {
     width: 350px;
     height: 190px;
+  }
+
+  .footer__container p {
+    font-size: 2.2rem;
+  }
+
+  .footer__container div img {
+    width: 82px;
+    height: 82px;
   }
 }
 @media screen and (min-width: 1300px) {
