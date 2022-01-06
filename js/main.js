@@ -168,6 +168,9 @@ $(() => {
 		$("#botonLightMode").slideDown(0);
 		$("body").addClass("dark");
 		cantOperations.style.backgroundColor = "#171717";
+		pantalla.style.backgroundColor = "#171717";
+		botonesColor(botones, "#171717");
+		botonesColor(funciones, "#171717");
 		changeColorCollection(buttons, "#171717");
 		changeColorCollection(titleSections, "#171717");
 		changeColorCollection(icons, "#171717");
@@ -181,6 +184,9 @@ $(() => {
 		$("#botonLightMode").slideUp(0);
 		$("body").removeClass("dark");
 		cantOperations.style.backgroundColor = "#fff";
+		pantalla.style.backgroundColor = "#fff";
+		botonesColor(botones, "#fff");
+		botonesColor(funciones, "#fff");
 		changeColorCollection(buttons, "#fff");
 		changeColorCollection(titleSections, "#fff");
 		changeColorCollection(icons, "#fff");
@@ -193,10 +199,59 @@ $(() => {
 		$("#botonLightMode").slideDown(0);
 		$("body").addClass("dark");
 		cantOperations.style.backgroundColor = "#171717";
+		pantalla.style.backgroundColor = "#171717";
+		botonesColor(botones, "#171717");
+		botonesColor(funciones, "#171717");
 		changeColorCollection(buttons, "#171717");
 		changeColorCollection(titleSections, "#171717");
 		changeColorCollection(icons, "#171717");
 		changeColorCollection(cards, "#171717");
 		localStorage.setItem("darkMode", "dark");
 	});
+});
+
+// CALCULADORA
+
+const botones = document.querySelectorAll(".botones");
+const funciones = document.querySelectorAll(".funciones");
+const pantalla = document.getElementById("pantalla");
+const borrar = document.getElementById("borrar");
+const resultado = document.getElementById("resultado");
+const reset = document.getElementById("reset");
+
+// FUNCION PARA CAMBIAR LOS COLORES EN EL DARK MODE
+const botonesColor = (let, color) => {
+	let.forEach((boton) => {
+		boton.style.backgroundColor = color;
+	});
+};
+
+// AGREGO LOS NUMEROS A LA PANTALLA
+botones.forEach((boton) => {
+	boton.addEventListener("click", () => {
+		pantalla.value += boton.value;
+	});
+});
+
+// BORRO LOS NUMEROS DE A UNO
+borrar.addEventListener("click", () => {
+	pantalla.value = pantalla.value.slice(0, -1);
+});
+
+// CALCULO EL RESULTADO
+resultado.addEventListener("click", () => {
+	const calculo = eval(pantalla.value).toFixed(1);
+	pantalla.value = calculo;
+	const operationCalc = new Operations(
+		"Calculadora",
+		`Resultado: <b>${calculo}</b>`
+	);
+	allOperations.push(operationCalc);
+	operationCalc.save("operations", JSON.stringify(allOperations));
+	operationCalc.saveHistorial();
+});
+
+// BORRO TODO DE LA PANTALLA
+reset.addEventListener("click", () => {
+	pantalla.value = "";
 });

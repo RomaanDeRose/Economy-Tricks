@@ -96,14 +96,16 @@
 			<h3 class="calcs__1">Pensa en el futuro!</h3>
 			<div class="calcs__1__container">
 				<form class="calcs__form" id="formMoney">
-					<h4 class="calcs__form__title">¿De acá a un año... Dólar o Plazo Fijo?</h4>
+					<h4 class="calcs__form__title">
+						¿De acá a un año... Dólar o Plazo Fijo?
+					</h4>
 					<div>
 						<label for="">Cuál es la tasa nominal de los Plazos Fijos?</label>
-						<input type="number" name="tasa"  id="" required>
+						<input type="number" name="tasa" id="" required />
 					</div>
 					<div>
 						<label for="">Cuánto crees que va a estar el Dólar?</label>
-						<input type="number" name="dolar" min="170" id="" required>
+						<input type="number" name="dolar" min="170" id="" required />
 					</div>
 					<button type="submit">consultar</button>
 				</form>
@@ -112,16 +114,56 @@
 					<h4 class="calcs__form__title">¿Cuánto vale mi salario?</h4>
 					<div>
 						<label for="">Cuánto es tu ingreso?</label>
-						<input type="number" name="ingreso" min="5000" id="" required>
+						<input type="number" name="ingreso" min="5000" id="" required />
 					</div>
 					<div>
 						<label for="">Cuál es el nivel de inflación actual?</label>
-						<input type="number" name="ipc" max="500" id="" required>
+						<input type="number" name="ipc" max="500" id="" required />
 					</div>
 					<button type="submit">calcular</button>
 				</form>
 				<div id="resultSalary"></div>
 			</div>
+			<div class="calcs__calculadora">
+				<h4 class="calcs__calculadora__title">Calculadora</h4>
+				<div class="calcs__calculadora__container">
+					<input type="text" id="pantalla" disabled />
+					<div class="calcs__calculadora__container__buttons">
+						<input type="button" class="botones" value="1" />
+						<input type="button" class="botones" value="2" />
+						<input type="button" class="botones" value="3" />
+						<input
+							type="button"
+							class="botones funciones"
+							id="reset"
+							value="C"
+						/>
+						<input
+							style="font-size: 17px"
+							type="button"
+							class="funciones"
+							id="borrar"
+							value="DEL"
+						/>
+						<input type="button" class="botones" value="4" />
+						<input type="button" class="botones" value="5" />
+						<input type="button" class="botones" value="6" />
+						<input type="button" class="botones operadores" value="+" />
+						<input type="button" class="botones operadores" value="-" />
+						<input type="button" class="botones" value="7" />
+						<input type="button" class="botones" value="8" />
+						<input type="button" class="botones" value="9" />
+						<input type="button" class="botones operadores" value="/" />
+						<input type="button" class="botones operadores" value="*" />
+						<input type="button" class="botones" value="0" />
+						<input type="button" class="botones" value="." />
+						<input type="button" class="botones" value="(" />
+						<input type="button" class="botones" value=")" />
+						<input type="button" class="funciones" id="resultado" value="=" />
+					</div>
+				</div>
+			</div>
+		</section>
 		<section id="history" class="history">
 			<h2 class="history__title">Historia</h2>
 			<p class="history__text">
@@ -157,41 +199,45 @@
 			<div class="carrusel">
 				<div class="carrusel-items">
 					<div class="carrusel-item">
-						<img src="./assets/adam-smith.jpg" alt=""/>
+						<img src="./assets/adam-smith.jpg" alt="" />
 					</div>
 					<div class="carrusel-item">
-						<img src="./assets/marx.jpg" alt=""/>
+						<img src="./assets/marx.jpg" alt="" />
 					</div>
 					<div class="carrusel-item">
-						<img src="./assets/hayek.jpg" alt=""/>
+						<img src="./assets/hayek.jpg" alt="" />
 					</div>
 					<div class="carrusel-item">
-						<img src="./assets/engels.jpg" alt=""/>
+						<img src="./assets/engels.jpg" alt="" />
 					</div>
 					<div class="carrusel-item">
-						<img src="./assets/milton-friedman.jpg" alt=""/>
+						<img src="./assets/milton-friedman.jpg" alt="" />
 					</div>
 					<div class="carrusel-item">
-						<img src="./assets/keynes.jpg" alt=""/>
+						<img src="./assets/keynes.jpg" alt="" />
 					</div>
 					<div class="carrusel-item">
-						<img src="./assets/hazlitt.jpg" alt=""/>
+						<img src="./assets/hazlitt.jpg" alt="" />
 					</div>
 					<div class="carrusel-item">
-						<img src="./assets/fourier.jpg" alt=""/>
+						<img src="./assets/fourier.jpg" alt="" />
 					</div>
 					<div class="carrusel-item">
-						<img src="./assets/Ludwig-von-Mises.jpg" alt=""/>
+						<img src="./assets/Ludwig-von-Mises.jpg" alt="" />
 					</div>
 					<div class="carrusel-item">
-						<img src="./assets/lange.jpg" alt=""/>
+						<img src="./assets/lange.jpg" alt="" />
 					</div>
 				</div>
 			</div>
 		</section>
 		<footer class="footer">footer</footer>
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
 		<script src="./js/main.js"></script>
 	</body>
 </html>

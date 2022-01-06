@@ -291,6 +291,72 @@ p.fas.fa-arrow-down {
 	width: 100%;
 	text-align: center;
 	color: $rojo;
+	&__calculadora {
+		width: 100%;
+		&__title {
+			color: $rojo;
+			font-size: 2.65rem;
+			font-weight: 600;
+			margin: 2rem 0 1.2rem 0;
+		}
+		&__container {
+			width: 290px;
+			height: 330px;
+			margin: 2.2rem auto;
+			padding: 8px;
+			border-radius: 10px;
+			background-color: $rojo;
+			box-shadow: 0px 0px 25px $rojo;
+			& #pantalla {
+				display: block;
+				width: 95%;
+				height: 7rem;
+				margin: 1rem auto 2rem auto;
+				padding: 8px;
+				background-color: $blanco;
+				outline: none;
+				border: none;
+				border-radius: 8px;
+				text-align: end;
+				color: $rojo;
+				font-size: 3.5rem;
+				font-weight: 900;
+				overflow-x: scroll;
+			}
+			&__buttons {
+				width: 95%;
+				margin: 0 auto;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr 1fr;
+				gap: 1.5rem;
+				& .botones {
+					width: 40px;
+					height: 40px;
+					border: none;
+					border-radius: 16px;
+					text-align: center;
+					font-size: 2.1rem;
+					font-weight: 600;
+					cursor: pointer;
+					color: $rojo;
+					background-color: $blanco;
+				}
+				& .funciones {
+					width: 40px;
+					height: 40px;
+					border: none;
+					border-radius: 16px;
+					text-align: center;
+					font-size: 2.1rem;
+					font-weight: 600;
+					cursor: pointer;
+					color: $rojo;
+					background-color: $blanco;
+				}
+			}
+		}
+	}
 	&__title {
 		background-color: $rojo;
 		color: $blanco;
@@ -412,7 +478,7 @@ p.fas.fa-arrow-down {
 		background-color: $rojo;
 		color: $blanco;
 		display: inline-block;
-		margin: 7rem auto 3rem auto;
+		margin: 6rem auto 3rem auto;
 		padding: 1.1rem 1.6rem;
 		box-shadow: 8px 10px 0px #e67968;
 		text-transform: uppercase;

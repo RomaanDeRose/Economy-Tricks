@@ -304,6 +304,72 @@ p.fas.fa-arrow-down {
   text-align: center;
   color: #e03015;
 }
+.calcs__calculadora {
+  width: 100%;
+}
+.calcs__calculadora__title {
+  color: #e03015;
+  font-size: 2.65rem;
+  font-weight: 600;
+  margin: 2rem 0 1.2rem 0;
+}
+.calcs__calculadora__container {
+  width: 290px;
+  height: 330px;
+  margin: 2.2rem auto;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #e03015;
+  box-shadow: 0px 0px 25px #e03015;
+}
+.calcs__calculadora__container #pantalla {
+  display: block;
+  width: 95%;
+  height: 7rem;
+  margin: 1rem auto 2rem auto;
+  padding: 8px;
+  background-color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  text-align: end;
+  color: #e03015;
+  font-size: 3.5rem;
+  font-weight: 900;
+  overflow-x: scroll;
+}
+.calcs__calculadora__container__buttons {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+.calcs__calculadora__container__buttons .botones {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #e03015;
+  background-color: #ffffff;
+}
+.calcs__calculadora__container__buttons .funciones {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #e03015;
+  background-color: #ffffff;
+}
 .calcs__title {
   background-color: #e03015;
   color: #ffffff;
@@ -425,7 +491,7 @@ p.fas.fa-arrow-down {
   background-color: #e03015;
   color: #ffffff;
   display: inline-block;
-  margin: 7rem auto 3rem auto;
+  margin: 6rem auto 3rem auto;
   padding: 1.1rem 1.6rem;
   box-shadow: 8px 10px 0px #e67968;
   text-transform: uppercase;
