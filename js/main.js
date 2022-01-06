@@ -122,16 +122,16 @@ formSalary.addEventListener("submit", (e) => {
 
 // CARRUSEL DE ECONOMISTAS
 const carrusel = document.querySelector(".carrusel-items");
-let speedCarrusel = 2.6;
+let speedCarrusel = 1.5;
 const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
 
 const startCarrusel = () => {
 	setInterval(() => {
 		carrusel.scrollLeft = carrusel.scrollLeft + speedCarrusel;
 		if (carrusel.scrollLeft === maxScrollLeft) {
-			speedCarrusel = -2.6;
+			speedCarrusel = -1.5;
 		} else if (carrusel.scrollLeft === 0) {
-			speedCarrusel = 2.6;
+			speedCarrusel = 1.5;
 		}
 	}, 10);
 };
@@ -220,8 +220,8 @@ const resultado = document.getElementById("resultado");
 const reset = document.getElementById("reset");
 
 // FUNCION PARA CAMBIAR LOS COLORES EN EL DARK MODE
-const botonesColor = (let, color) => {
-	let.forEach((boton) => {
+const botonesColor = (i, color) => {
+	i.forEach((boton) => {
 		boton.style.backgroundColor = color;
 	});
 };
