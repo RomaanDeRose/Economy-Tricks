@@ -122,16 +122,16 @@ formSalary.addEventListener("submit", (e) => {
 
 // CARRUSEL DE ECONOMISTAS
 const carrusel = document.querySelector(".carrusel-items");
-let speedCarrusel = 1.5;
+let speedCarrusel = 1.2;
 const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
 
 const startCarrusel = () => {
 	setInterval(() => {
 		carrusel.scrollLeft = carrusel.scrollLeft + speedCarrusel;
 		if (carrusel.scrollLeft === maxScrollLeft) {
-			speedCarrusel = -1.5;
+			speedCarrusel = -1.2;
 		} else if (carrusel.scrollLeft === 0) {
-			speedCarrusel = 1.5;
+			speedCarrusel = 1.2;
 		}
 	}, 10);
 };
@@ -147,19 +147,17 @@ const changeColorCollection = (collection, color) => {
 };
 
 // MODO OSCURO O CLARO
-let darkMode;
 const titleSections = document.getElementsByTagName("h2");
 const buttons = document.getElementsByTagName("button");
 const icons = document.getElementsByTagName("i");
 const cards = document.getElementsByClassName("divs");
 const footerText = document.getElementById("footerText");
+let darkMode;
 
 // FUNCIONAMIENTO DEL MODO OSCURO
-if (localStorage.getItem("darkMode")) {
-	darkMode = localStorage.getItem("darkMode");
-} else {
-	darkMode = "light";
-}
+localStorage.getItem("darkMode")
+	? (darkMode = localStorage.getItem("darkMode"))
+	: (darkMode = "light");
 
 localStorage.setItem("darkMode", darkMode);
 
