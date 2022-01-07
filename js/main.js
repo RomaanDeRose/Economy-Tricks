@@ -58,10 +58,10 @@ class Operations {
 	}
 }
 
-// EVENTO SUBMIT AL PRIMER FORMULARIO DE LA SECCION cálculos CON API DE criptoYA
 const formMoney = document.getElementById("formMoney");
 const finallyResult = document.getElementById("resultDolarOrInflation");
 
+// FUNCION PARA LA SECCION cálculos CON API DE criptoYA
 const dolarOrPF = async () => {
 	const peticion = await fetch("https://criptoya.com/api/dolar");
 	const valores = await peticion.json();

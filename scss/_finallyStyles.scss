@@ -717,3 +717,24 @@ p.fas.fa-arrow-down {
 		margin: 3rem auto 5rem auto;
 	}
 }
+
+@media screen and (min-height: 650px) {
+	p.fas.fa-arrow-down {
+		top: 500px;
+	}
+}
+@media screen and (min-height: 730px) {
+	p.fas.fa-arrow-down {
+		top: 550px;
+	}
+}
+@media screen and (min-height: 800px) {
+	p.fas.fa-arrow-down {
+		top: 600px;
+	}
+}
+@media screen and (min-height: 930px) {
+	p.fas.fa-arrow-down {
+		top: 700px;
+	}
+}
