@@ -58,17 +58,15 @@ class Operations {
 	}
 }
 
-// EVENTO SUBMIT AL PRIMER FORMULARIO DE LA SECCION cálculos
+// EVENTO SUBMIT AL PRIMER FORMULARIO DE LA SECCION cálculos CON API DE criptoYA
 const formMoney = document.getElementById("formMoney");
 const finallyResult = document.getElementById("resultDolarOrInflation");
 
-formMoney.addEventListener("submit", (e) => {
-	e.preventDefault();
-	const formDataOne = new FormData(e.target);
-	// const dolar = fetch("https://criptoya.com/api/dolar");
-	// const dolarActual = dolar.then((res) => res.json()).then((data) => data.blue);
-	// console.log(dolarActual);
-	const dolarActual = 200;
+const dolarOrPF = async () => {
+	const peticion = await fetch("https://criptoya.com/api/dolar");
+	const valores = await peticion.json();
+	const dolarActual = await valores.blue;
+	const formDataOne = new FormData(formMoney);
 	const formula =
 		((formDataOne.get("dolar") - dolarActual) / dolarActual) * 100;
 	let result;
@@ -96,12 +94,17 @@ formMoney.addEventListener("submit", (e) => {
 	operationDolOrPF.save("operations", JSON.stringify(allOperations));
 	operationDolOrPF.saveHistorial();
 	formMoney.reset();
+};
+
+formMoney.addEventListener("submit", (e) => {
+	e.preventDefault();
+	dolarOrPF();
 });
 
+// EVENTO SUBMIT AL SEGUNDO FORMULARIO DE LA SECCION cálculos
 const formSalary = document.getElementById("formSalary");
 const resultSalary = document.getElementById("resultSalary");
 
-// EVENTO SUBMIT AL SEGUNDO FORMULARIO DE LA SECCION cálculos
 formSalary.addEventListener("submit", (e) => {
 	e.preventDefault();
 	const formDataTwo = new FormData(e.target);
