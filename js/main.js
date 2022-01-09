@@ -31,9 +31,10 @@ const allOperations = [];
 
 // CREO LA CLASE OPERACIONES
 class Operations {
-	constructor(type, result) {
+	constructor(type, result, date) {
 		this.type = type;
 		this.result = result;
+		this.date = date;
 	}
 	save(key, value) {
 		localStorage.setItem(key, value);
@@ -46,6 +47,7 @@ class Operations {
 			historialContainerResult.innerHTML = `
 					<h4 class="title">${operation.type}:</h4>
 					<p class="result">${operation.result}</p>
+					<p class="date">${operation.date}</p>
 					`;
 			cantOperationsText.textContent = index + 1;
 		});
@@ -58,11 +60,23 @@ class Operations {
 	}
 }
 
+// CREO FUNCION PARA OBTENER LA HORA ACTUAL DE MANERA CORRECTA
+const addZero = (date) => {
+	if (date.toString().length < 2) {
+		return "0".concat(date);
+	} else {
+		return date;
+	}
+};
+
 const formMoney = document.getElementById("formMoney");
 const finallyResult = document.getElementById("resultDolarOrInflation");
 
 // FUNCION PARA LA SECCION cálculos CON API DE criptoYA
 const dolarOrPF = async () => {
+	let date = new Date();
+	const dateHour = addZero(date.getHours());
+	const dateMinutes = addZero(date.getMinutes());
 	const peticion = await fetch("https://criptoya.com/api/dolar");
 	const valores = await peticion.json();
 	const dolarActual = await valores.blue;
@@ -89,7 +103,11 @@ const dolarOrPF = async () => {
 		<p>${result}</p>
 		`;
 	}
-	const operationDolOrPF = new Operations("Dolar ó PLazo Fijo", result);
+	const operationDolOrPF = new Operations(
+		"Inversión",
+		result,
+		`${dateHour}:${dateMinutes}`
+	);
 	allOperations.push(operationDolOrPF);
 	operationDolOrPF.save("operations", JSON.stringify(allOperations));
 	operationDolOrPF.saveHistorial();
@@ -106,6 +124,9 @@ const formSalary = document.getElementById("formSalary");
 const resultSalary = document.getElementById("resultSalary");
 
 formSalary.addEventListener("submit", (e) => {
+	let date = new Date();
+	const dateHour = addZero(date.getHours());
+	const dateMinutes = addZero(date.getMinutes());
 	e.preventDefault();
 	const formDataTwo = new FormData(e.target);
 	const salaryResult = (
@@ -116,7 +137,11 @@ formSalary.addEventListener("submit", (e) => {
 	<h3>Tu Poder Adquisitivo es de:</h3>
 	<p>$${salaryResult}</p>
 	`;
-	const operationSalary = new Operations("Salario Real", `$${salaryResult}`);
+	const operationSalary = new Operations(
+		"Salario Real",
+		`$${salaryResult}`,
+		`${dateHour}:${dateMinutes}`
+	);
 	allOperations.push(operationSalary);
 	operationSalary.save("operations", JSON.stringify(allOperations));
 	operationSalary.saveHistorial();
@@ -247,9 +272,13 @@ borrar.addEventListener("click", () => {
 resultado.addEventListener("click", () => {
 	const calculo = eval(pantalla.value).toFixed(1);
 	pantalla.value = calculo;
+	let date = new Date();
+	const dateHour = addZero(date.getHours());
+	const dateMinutes = addZero(date.getMinutes());
 	const operationCalc = new Operations(
 		"Calculadora",
-		`Resultado: <b>${calculo}</b>`
+		`Resultado: <b>${calculo}</b>`,
+		`${dateHour}:${dateMinutes}`
 	);
 	allOperations.push(operationCalc);
 	operationCalc.save("operations", JSON.stringify(allOperations));

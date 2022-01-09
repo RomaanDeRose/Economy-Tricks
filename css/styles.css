@@ -122,6 +122,7 @@ i.fas.fa-align-center::before {
   margin: 2rem auto;
   padding: 0.9rem;
   border-radius: 20px 4px;
+  position: relative;
 }
 
 .historialNav .title {
@@ -134,6 +135,15 @@ i.fas.fa-align-center::before {
   color: #e03015;
   font-size: 1.7rem;
   font-weight: 400;
+}
+
+.historialNav .date {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  color: #e03015;
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .cantOpertaions {
