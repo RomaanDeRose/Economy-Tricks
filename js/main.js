@@ -69,17 +69,64 @@ const addZero = (date) => {
 	}
 };
 
+// CREO FUNCION PARA OBTENER EL MES ACTUAL DE MANERA CORRECTA
+const monthString = (month) => {
+	switch (month) {
+		case 0:
+			month = "01";
+			break;
+		case 1:
+			month = "02";
+			break;
+		case 2:
+			month = "03";
+			break;
+		case 3:
+			month = "04";
+			break;
+		case 4:
+			month = "05";
+			break;
+		case 5:
+			month = "06";
+			break;
+		case 6:
+			month = "07";
+			break;
+		case 7:
+			month = "08";
+			break;
+		case 8:
+			month = "09";
+			break;
+		case 9:
+			month = "10";
+			break;
+		case 10:
+			month = "11";
+			break;
+		case 11:
+			month = "12";
+			break;
+		default:
+			break;
+	}
+	return month;
+};
+
 const formMoney = document.getElementById("formMoney");
 const finallyResult = document.getElementById("resultDolarOrInflation");
 
 // FUNCION PARA LA SECCION cálculos CON API DE criptoYA
 const dolarOrPF = async () => {
-	let date = new Date();
-	const dateHour = addZero(date.getHours());
-	const dateMinutes = addZero(date.getMinutes());
 	const peticion = await fetch("https://criptoya.com/api/dolar");
 	const valores = await peticion.json();
 	const dolarActual = await valores.blue;
+	let date = new Date();
+	const dateDay = addZero(date.getDate());
+	const dateMonth = monthString(date.getMonth());
+	const dateHour = addZero(date.getHours());
+	const dateMinutes = addZero(date.getMinutes());
 	const formDataOne = new FormData(formMoney);
 	const formula =
 		((formDataOne.get("dolar") - dolarActual) / dolarActual) * 100;
@@ -106,7 +153,7 @@ const dolarOrPF = async () => {
 	const operationDolOrPF = new Operations(
 		"Inversión",
 		result,
-		`${dateHour}:${dateMinutes}`
+		`${dateDay}/${dateMonth}, ${dateHour}:${dateMinutes}`
 	);
 	allOperations.push(operationDolOrPF);
 	operationDolOrPF.save("operations", JSON.stringify(allOperations));
@@ -125,6 +172,8 @@ const resultSalary = document.getElementById("resultSalary");
 
 formSalary.addEventListener("submit", (e) => {
 	let date = new Date();
+	const dateDay = addZero(date.getDate());
+	const dateMonth = monthString(date.getMonth());
 	const dateHour = addZero(date.getHours());
 	const dateMinutes = addZero(date.getMinutes());
 	e.preventDefault();
@@ -140,7 +189,7 @@ formSalary.addEventListener("submit", (e) => {
 	const operationSalary = new Operations(
 		"Salario Real",
 		`$${salaryResult}`,
-		`${dateHour}:${dateMinutes}`
+		`${dateDay}/${dateMonth}, ${dateHour}:${dateMinutes}`
 	);
 	allOperations.push(operationSalary);
 	operationSalary.save("operations", JSON.stringify(allOperations));
@@ -270,19 +319,25 @@ borrar.addEventListener("click", () => {
 
 // CALCULO EL RESULTADO
 resultado.addEventListener("click", () => {
-	const calculo = eval(pantalla.value).toFixed(1);
-	pantalla.value = calculo;
-	let date = new Date();
-	const dateHour = addZero(date.getHours());
-	const dateMinutes = addZero(date.getMinutes());
-	const operationCalc = new Operations(
-		"Calculadora",
-		`Resultado: <b>${calculo}</b>`,
-		`${dateHour}:${dateMinutes}`
-	);
-	allOperations.push(operationCalc);
-	operationCalc.save("operations", JSON.stringify(allOperations));
-	operationCalc.saveHistorial();
+	try {
+		const calculo = eval(pantalla.value).toFixed(1);
+		pantalla.value = calculo;
+		let date = new Date();
+		const dateDay = addZero(date.getDate());
+		const dateMonth = monthString(date.getMonth());
+		const dateHour = addZero(date.getHours());
+		const dateMinutes = addZero(date.getMinutes());
+		const operationCalc = new Operations(
+			"Calculadora",
+			`Resultado: <b>${calculo}</b>`,
+			`${dateDay}/${dateMonth}, ${dateHour}:${dateMinutes}`
+		);
+		allOperations.push(operationCalc);
+		operationCalc.save("operations", JSON.stringify(allOperations));
+		operationCalc.saveHistorial();
+	} catch (e) {
+		window.innerHTML = e;
+	}
 });
 
 // BORRO TODO DE LA PANTALLA

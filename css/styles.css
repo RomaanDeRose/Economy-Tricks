@@ -127,6 +127,7 @@ i.fas.fa-align-center::before {
 
 .historialNav .title {
   color: #e03015;
+  margin: 0.3rem 0rem 0rem 0rem;
   font-size: 2rem;
   font-weight: 800;
 }
@@ -139,7 +140,7 @@ i.fas.fa-align-center::before {
 
 .historialNav .date {
   position: absolute;
-  top: 2px;
+  top: 3px;
   right: 6px;
   color: #e03015;
   font-size: 0.9rem;
@@ -367,6 +368,10 @@ p.fas.fa-arrow-down {
   cursor: pointer;
   color: #e03015;
   background-color: #ffffff;
+  transition: all 200ms ease;
+}
+.calcs__calculadora__container__buttons .botones:active {
+  transform: scale(0.9);
 }
 .calcs__calculadora__container__buttons .funciones {
   width: 40px;
@@ -379,6 +384,10 @@ p.fas.fa-arrow-down {
   cursor: pointer;
   color: #e03015;
   background-color: #ffffff;
+  transition: all 200ms ease;
+}
+.calcs__calculadora__container__buttons .funciones:active {
+  transform: scale(0.9);
 }
 .calcs__title {
   background-color: #e03015;

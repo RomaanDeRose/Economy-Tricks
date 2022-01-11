@@ -114,6 +114,7 @@ i.fas.fa-align-center::before {
 
 .historialNav .title {
 	color: $rojo;
+	margin: 0.3rem 0rem 0rem 0rem;
 	font-size: 2rem;
 	font-weight: 800;
 }
@@ -126,7 +127,7 @@ i.fas.fa-align-center::before {
 
 .historialNav .date {
 	position: absolute;
-	top: 2px;
+	top: 3px;
 	right: 6px;
 	color: $rojo;
 	font-size: 0.9rem;
@@ -351,6 +352,10 @@ p.fas.fa-arrow-down {
 					cursor: pointer;
 					color: $rojo;
 					background-color: $blanco;
+					transition: all 200ms ease;
+					&:active {
+						transform: scale(0.9);
+					}
 				}
 				& .funciones {
 					width: 40px;
@@ -363,6 +368,10 @@ p.fas.fa-arrow-down {
 					cursor: pointer;
 					color: $rojo;
 					background-color: $blanco;
+					transition: all 200ms ease;
+					&:active {
+						transform: scale(0.9);
+					}
 				}
 			}
 		}
