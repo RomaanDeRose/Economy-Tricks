@@ -317,6 +317,7 @@ borrar.addEventListener("click", () => {
 	pantalla.value = pantalla.value.slice(0, -1);
 });
 
+const modalError = document.querySelector(".modal");
 // CALCULO EL RESULTADO
 resultado.addEventListener("click", () => {
 	try {
@@ -336,8 +337,18 @@ resultado.addEventListener("click", () => {
 		operationCalc.save("operations", JSON.stringify(allOperations));
 		operationCalc.saveHistorial();
 	} catch (e) {
-		window.innerHTML = e;
+		setTimeout(() => {
+			modalError.classList.add("modalError");
+			modalError.innerHTML += `
+				<p>ERROR :(</p>
+				<p>No se puede realizar dicha operación</p>
+			`;
+		}, 100);
 	}
+	setTimeout(() => {
+		modalError.classList.remove("modalError");
+		modalError.innerHTML = "";
+	}, 2000);
 });
 
 // BORRO TODO DE LA PANTALLA
