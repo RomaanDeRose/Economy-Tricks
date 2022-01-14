@@ -39,26 +39,26 @@ class Operations {
 	save(key, value) {
 		localStorage.setItem(key, value);
 	}
-	saveHistorial() {
-		const historialContainerResult = document.createElement("div");
-		historialContainerResult.classList.add("containerResult");
-		const allOperationsParse = JSON.parse(localStorage.getItem("operations"));
-		allOperationsParse.forEach((operation, index) => {
-			historialContainerResult.innerHTML = `
-					<h4 class="title">${operation.type}:</h4>
-					<p class="result">${operation.result}</p>
-					<p class="date">${operation.date}</p>
-					`;
-			cantOperationsText.textContent = index + 1;
-		});
-		historialOperations.appendChild(historialContainerResult);
-		if (localStorage.getItem("darkMode") == "dark") {
-			historialContainerResult.style.backgroundColor = "#171717";
-		} else {
-			historialContainerResult.style.backgroundColor = "#fff";
-		}
-	}
 }
+
+// FUNCION PARA AGREGAR OPERACIONES AL HISTORIAL
+const saveInHistorial = () => {
+	const historialContainerResult = document.createElement("div");
+	historialContainerResult.classList.add("containerResult");
+	const allOperationsParse = JSON.parse(localStorage.getItem("operations"));
+	allOperationsParse.forEach((operation, index) => {
+		historialContainerResult.innerHTML = `
+				<h4 class="title">${operation.type}:</h4>
+				<p class="result">${operation.result}</p>
+				<p class="date">${operation.date}</p>
+				`;
+		cantOperationsText.textContent = index + 1;
+	});
+	historialOperations.appendChild(historialContainerResult);
+	localStorage.getItem("darkMode") == "dark"
+		? (historialContainerResult.style.backgroundColor = "#171717")
+		: (historialContainerResult.style.backgroundColor = "#fff");
+};
 
 // CREO FUNCION PARA OBTENER LA HORA ACTUAL DE MANERA CORRECTA
 const addZero = (date) => {
@@ -157,10 +157,11 @@ const dolarOrPF = async () => {
 	);
 	allOperations.push(operationDolOrPF);
 	operationDolOrPF.save("operations", JSON.stringify(allOperations));
-	operationDolOrPF.saveHistorial();
+	saveInHistorial();
 	formMoney.reset();
 };
 
+// EVENTO SUBMIT AL PRIMER FORMULARIO DE LA SECCION cálculos
 formMoney.addEventListener("submit", (e) => {
 	e.preventDefault();
 	dolarOrPF();
@@ -193,7 +194,7 @@ formSalary.addEventListener("submit", (e) => {
 	);
 	allOperations.push(operationSalary);
 	operationSalary.save("operations", JSON.stringify(allOperations));
-	operationSalary.saveHistorial();
+	saveInHistorial();
 	formSalary.reset();
 });
 
@@ -335,7 +336,7 @@ resultado.addEventListener("click", () => {
 		);
 		allOperations.push(operationCalc);
 		operationCalc.save("operations", JSON.stringify(allOperations));
-		operationCalc.saveHistorial();
+		saveInHistorial();
 	} catch (e) {
 		setTimeout(() => {
 			modalError.classList.add("modalError");
@@ -348,7 +349,7 @@ resultado.addEventListener("click", () => {
 	setTimeout(() => {
 		modalError.classList.remove("modalError");
 		modalError.innerHTML = "";
-	}, 2000);
+	}, 2500);
 });
 
 // BORRO TODO DE LA PANTALLA
