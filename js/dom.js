@@ -6,6 +6,7 @@ btnNav.addEventListener("click", () => {
 	navMobile.classList.toggle("navMobile__active");
 });
 
+// NAV DESAPARECE AL HACER CLICK EN EL ENLACE
 const navMobileLinks = document.querySelectorAll(".link");
 
 navMobileLinks.forEach((link) => {
@@ -24,19 +25,21 @@ btnHistorial.addEventListener("click", () => {
 
 // MODO OSCURO O CLARO
 
-// FUNCION PARA CAMBIAR LOS COLORES EN EL DARK MODE
+// FUNCION PARA CAMBIAR LOS COLORES DE LA CALCULADORA EN EL DARK MODE
 const botonesColor = (i, color) => {
 	i.forEach((boton) => {
 		boton.style.backgroundColor = color;
 	});
 };
 
+// FUNCION PARA CAMBIAR LOS COLORES DE LOS htmlCollection
 const changeColorCollection = (collection, color) => {
 	for (let i = 0; i < collection.length; i++) {
 		collection[i].style.color = color;
 	}
 };
 
+// VARIABLES DEL MODO OSCURO
 const titleSections = document.getElementsByTagName("h2");
 const buttons = document.getElementsByTagName("button");
 const icons = document.getElementsByTagName("i");
@@ -107,6 +110,7 @@ const carrusel = document.querySelector(".carrusel-items");
 let speedCarrusel = 1.2;
 const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
 
+// FUNCION PARA PONER EN MOVIMINETO EL CARRUSEL
 const startCarrusel = () => {
 	setInterval(() => {
 		carrusel.scrollLeft = carrusel.scrollLeft + speedCarrusel;
