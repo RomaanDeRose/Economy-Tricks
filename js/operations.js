@@ -52,6 +52,9 @@ const monthString = (month) => {
 	return month;
 };
 
+// LAS OPERACIONES HECHAS, VAN A SER GUARDADAS EN ESTE ARRAY, PARA LUEGO RECCORERLO Y MOSTRARLAS
+const allOperations = [];
+
 const formMoney = document.getElementById("formMoney");
 const finallyResult = document.getElementById("resultDolarOrInflation");
 

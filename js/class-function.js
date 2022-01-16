@@ -1,11 +1,3 @@
-// ACA VAN A IR APARECIENDO LAS OPERACIONES EN EL HISTORIAL
-const historialOperations = document.getElementById("historialOperations");
-const cantOperations = document.querySelector(".cantOpertaions");
-const cantOperationsText = cantOperations.children[0];
-
-// LAS OPERACIONES HECHAS, VAN A SER GUARDADAS EN ESTE ARRAY, PARA LUEGO RECCORERLO Y MOSTRARLAS
-const allOperations = [];
-
 // CREO LA CLASE OPERACIONES
 class Operations {
 	constructor(type, result, date) {
@@ -17,6 +9,11 @@ class Operations {
 		localStorage.setItem(key, value);
 	}
 }
+
+// ACA VAN A IR APARECIENDO LAS OPERACIONES EN EL HISTORIAL
+const historialOperations = document.getElementById("historialOperations");
+const cantOperations = document.querySelector(".cantOpertaions");
+const cantOperationsText = cantOperations.children[0];
 
 // FUNCION PARA AGREGAR OPERACIONES AL HISTORIAL
 const saveInHistorial = () => {
@@ -37,8 +34,10 @@ const saveInHistorial = () => {
 		: (historialContainerResult.style.backgroundColor = "#fff");
 };
 
+// ESTE BOTON VA A BORRAR EL HISTORIAL
 const clearBtn = document.getElementById("clearHistory");
 
+// FUNCION PARA BORRAR EL HISTORIAL
 const clearHistory = () => {
 	allOperations.splice(0, allOperations.length);
 	localStorage.removeItem("operations");
