@@ -62,6 +62,7 @@ $(() => {
 		footerText.style.color = "#171717";
 		cantOperations.style.backgroundColor = "#171717";
 		pantalla.style.backgroundColor = "#171717";
+		clearBtn.style.backgroundColor = "#171717";
 		botonesColor(botones, "#171717");
 		botonesColor(funciones, "#171717");
 		changeColorCollection(buttons, "#171717");
@@ -79,6 +80,7 @@ $(() => {
 		footerText.style.color = "#fff";
 		cantOperations.style.backgroundColor = "#fff";
 		pantalla.style.backgroundColor = "#fff";
+		clearBtn.style.backgroundColor = "#fff";
 		botonesColor(botones, "#fff");
 		botonesColor(funciones, "#fff");
 		changeColorCollection(buttons, "#fff");
@@ -95,6 +97,7 @@ $(() => {
 		footerText.style.color = "#171717";
 		cantOperations.style.backgroundColor = "#171717";
 		pantalla.style.backgroundColor = "#171717";
+		clearBtn.style.backgroundColor = "#171717";
 		botonesColor(botones, "#171717");
 		botonesColor(funciones, "#171717");
 		changeColorCollection(buttons, "#171717");

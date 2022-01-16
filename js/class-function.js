@@ -36,3 +36,14 @@ const saveInHistorial = () => {
 		? (historialContainerResult.style.backgroundColor = "#171717")
 		: (historialContainerResult.style.backgroundColor = "#fff");
 };
+
+const clearBtn = document.getElementById("clearHistory");
+
+const clearHistory = () => {
+	allOperations.splice(0, allOperations.length);
+	localStorage.removeItem("operations");
+	historialOperations.innerHTML = "";
+	cantOperationsText.textContent = "0";
+};
+
+clearBtn.addEventListener("click", clearHistory);

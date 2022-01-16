@@ -112,6 +112,19 @@ i.fas.fa-align-center::before {
 	position: relative;
 }
 
+#clearHistory {
+	width: 85px;
+	background-color: #fff;
+	color: $rojo;
+	margin: 0.7rem auto;
+	padding: 0.8rem 0;
+	border: none;
+	border-radius: 12px;
+	font-size: 1.6rem;
+	font-weight: 800;
+	cursor: pointer;
+}
+
 .historialNav .title {
 	color: $rojo;
 	margin: 0.3rem 0rem 0rem 0rem;
